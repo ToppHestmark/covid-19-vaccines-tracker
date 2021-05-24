@@ -1,5 +1,6 @@
 import { CountriesListArrayProps } from "./countriesList.models";
 import { nonCountryArray } from "../../constants/nonCountryArray";
+import { formatDate, formatLargeNum } from "../../utils/formatting";
 import {
   Container,
   HeadWrapper,
@@ -27,8 +28,8 @@ const CountriesList = ({ countries }: CountriesListArrayProps) => {
           <DailyHead>Daily</DailyHead>
           <TotalHead>Total</TotalHead>
           <FullyVaccHead>Fully vaccinated</FullyVaccHead>
-          <PerHundredHead>Per 100 </PerHundredHead>
-          <LastUpdatedHead>Last updated</LastUpdatedHead>
+          <PerHundredHead>%</PerHundredHead>
+          <LastUpdatedHead>Last update</LastUpdatedHead>
         </HeadRow>
       </HeadWrapper>
       <BodyWrapper>
@@ -38,11 +39,16 @@ const CountriesList = ({ countries }: CountriesListArrayProps) => {
           return (
             <BodyRow key={obj.iso_code}>
               <td>{obj.country} </td>
-              <td>{last.daily_vaccinations}</td>
-              <td> {last.total_vaccinations} </td>
-              <td> {last.people_fully_vaccinated} </td>
-              <td> {Math.floor(last.total_vaccinations_per_hundred)} </td>
-              <td>{last.date}</td>
+              <td>{formatLargeNum(last.daily_vaccinations)}</td>
+              <td> {formatLargeNum(last.total_vaccinations)} </td>
+              <td> {formatLargeNum(last?.people_fully_vaccinated)} </td>
+              <td>
+                {" "}
+                {last.people_vaccinated_per_hundred === undefined
+                  ? "-"
+                  : last.people_vaccinated_per_hundred}{" "}
+              </td>
+              <td>{formatDate(last.date)}</td>
             </BodyRow>
           );
         })}

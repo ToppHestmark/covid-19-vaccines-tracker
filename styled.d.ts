@@ -10,6 +10,8 @@ declare module "styled-components" {
       secondary: string;
       neutral: string;
       gray: string;
+      light: string;
+      dark: string;
     };
   }
 }

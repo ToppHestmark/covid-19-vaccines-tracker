@@ -7,8 +7,10 @@ const theme: DefaultTheme = {
     primary: "#fc5c9c",
     primary_light: "#fccde2",
     secondary: "#fcefee",
-    neutral: "#fdfdfd",
+    neutral: "#f0f0f0",
     gray: "#f3f3f3",
+    light: "#fdfdfd",
+    dark: "#2e323d",
   },
 };
 
