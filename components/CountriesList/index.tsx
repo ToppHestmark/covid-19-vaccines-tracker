@@ -1,40 +1,53 @@
-import React from "react";
-import { TableContainer } from "./CountriesList.styles";
 import { CountriesListArrayProps } from "./countriesList.models";
-
-const nonCountryArray: string[] = [
-  "Africa",
-  "Asia",
-  "Europe",
-  "European Union",
-  "High income",
-  "Low income",
-  "Lower middle income",
-  "North America",
-  "Oceania",
-  "South America",
-  "Upper middle income",
-  "World",
-];
+import { nonCountryArray } from "../../constants/nonCountryArray";
+import {
+  Container,
+  HeadWrapper,
+  HeadRow,
+  CountryHead,
+  DailyHead,
+  TotalHead,
+  FullyVaccHead,
+  PerHundredHead,
+  LastUpdatedHead,
+  BodyWrapper,
+  BodyRow,
+} from "./CountriesList.styles";
 
 const CountriesList = ({ countries }: CountriesListArrayProps) => {
-  const filteredData = countries.filter(
+  const countriesData = countries.filter(
     (obj) => !nonCountryArray.includes(obj.country)
   );
 
-  // const data = obj.data;
-  //   const lastUpdate = data[data.length - 1];
-
   return (
-    <TableContainer>
-      <thead>
-        <tr>
-          <th>Country/Territory</th>
-          <th>Daily</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-    </TableContainer>
+    <Container cellSpacing="0" cellPadding="0">
+      <HeadWrapper>
+        <HeadRow>
+          <CountryHead>Country / Territory</CountryHead>
+          <DailyHead>Daily</DailyHead>
+          <TotalHead>Total</TotalHead>
+          <FullyVaccHead>Fully vaccinated</FullyVaccHead>
+          <PerHundredHead>Per 100 </PerHundredHead>
+          <LastUpdatedHead>Last updated</LastUpdatedHead>
+        </HeadRow>
+      </HeadWrapper>
+      <BodyWrapper>
+        {countriesData.flatMap((obj) => {
+          const last = obj.data[obj.data.length - 1];
+
+          return (
+            <BodyRow key={obj.iso_code}>
+              <td>{obj.country} </td>
+              <td>{last.daily_vaccinations}</td>
+              <td> {last.total_vaccinations} </td>
+              <td> {last.people_fully_vaccinated} </td>
+              <td> {Math.floor(last.total_vaccinations_per_hundred)} </td>
+              <td>{last.date}</td>
+            </BodyRow>
+          );
+        })}
+      </BodyWrapper>
+    </Container>
   );
 };
 

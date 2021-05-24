@@ -7,5 +7,4 @@ export const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.colors.neutral};
 `;
