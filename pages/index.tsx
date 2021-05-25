@@ -1,11 +1,35 @@
+import { useState, ChangeEvent } from "react";
 import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
 
-import { Layout, CountriesList } from "../components";
+import { continentsArray } from "../variables/continentsArray";
+
+import {
+  Layout,
+  ContinentsList,
+  CountriesList,
+  SearchBar,
+} from "../components";
 
 export default function Home({
   countriesArray,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const [search, setSearch] = useState("");
+
+  const countriesSearch = countriesArray.filter((con: any) =>
+    con.country.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+
+    setSearch(e.target.value.toLowerCase());
+  };
+
+  const continentsData = countriesArray.filter((obj: any) =>
+    continentsArray.includes(obj.country)
+  );
+
   return (
     <>
       <Head>
@@ -19,7 +43,14 @@ export default function Home({
       </Head>
 
       <Layout>
-        <CountriesList countries={countriesArray} />
+        <ContinentsList continents={continentsData} />
+
+        <SearchBar
+          type="text"
+          placeholder="Search for countries"
+          onChange={handleSearch}
+        />
+        <CountriesList countries={countriesSearch} />
       </Layout>
     </>
   );
