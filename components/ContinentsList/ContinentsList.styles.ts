@@ -26,7 +26,7 @@ export const Container = styled.section`
 
 export const Card = styled.div`
   min-width: 300px;
-  min-height: 130px;
+  min-height: 110px;
   padding: 2em 1em;
   margin: 0 1em;
   display: grid;
