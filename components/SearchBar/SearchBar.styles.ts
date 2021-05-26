@@ -23,6 +23,10 @@ export const Input = styled.input`
     ${(props) => props.theme.boxShadow};
   }
 
+  @media screen and (max-width: 1100px) {
+    margin: 0em 1em;
+  }
+
   @media screen and (min-width: 768px) {
     width: 400px;
   }

@@ -26,6 +26,10 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  h3 {
+    font-size: 1.125rem;
+  }
+
   a {
     color: inherit;
     text-decoration: none;

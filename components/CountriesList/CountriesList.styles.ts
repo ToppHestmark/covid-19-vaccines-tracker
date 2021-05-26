@@ -83,7 +83,6 @@ export const BodyRow = styled.tr`
 
     &:last-child {
       padding-right: 0.6em;
-      font-weight: 200;
       font-size: 0.875rem;
       text-align: end;
     }

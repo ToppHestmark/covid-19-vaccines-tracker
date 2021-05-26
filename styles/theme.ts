@@ -16,6 +16,7 @@ const theme: DefaultTheme = {
     gray: "#f3f3f3",
     light: "#fdfdfd",
     dark: "#2e323d",
+    success: "#17b978",
   },
 };
 
