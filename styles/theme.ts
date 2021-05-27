@@ -9,10 +9,11 @@ const theme: DefaultTheme = {
   `,
 
   colors: {
-    primary: "#ace7ef",
-    secondary: "#ecfffb",
+    primary: "#f5b5fc",
+    secondary: "#fcb1b1",
     neutral: "#f8f9fa",
-    gray: "#f3f3f3",
+    gray: "#e1e1e1",
+    gray_light: "#e7eded",
     light: "#fdfdfd",
     dark: "#2e323d",
     success: "#17b978",

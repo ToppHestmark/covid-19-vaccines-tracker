@@ -10,6 +10,7 @@ import {
   ContinentsList,
   CountriesList,
   SearchBar,
+  WorldList,
 } from "../components";
 
 export default function Home({
@@ -30,6 +31,10 @@ export default function Home({
 
   const continentsData = countriesArray.filter((obj: any) =>
     continentsArray.includes(obj.country)
+  );
+
+  const worldData = countriesArray.filter(
+    (obj: any) => obj.country === "World"
   );
 
   useEffect(() => {
@@ -55,8 +60,8 @@ export default function Home({
           <ProgressBar />
         ) : (
           <>
+            <WorldList worldData={worldData} />
             <ContinentsList continents={continentsData} />
-
             <SearchBar
               type="text"
               placeholder="Search for countries"

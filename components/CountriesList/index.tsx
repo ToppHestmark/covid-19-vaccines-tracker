@@ -34,7 +34,7 @@ const CountriesList = ({ countries }: CountriesListArrayProps) => {
           </HeadRow>
         </HeadWrapper>
         <BodyWrapper>
-          {countriesData.flatMap((obj) => {
+          {countriesData.map((obj) => {
             const last = obj.data[obj.data.length - 1];
 
             return (

@@ -22,12 +22,13 @@ export const GlobalStyle = createGlobalStyle`
     align-items: center;
     
     @media screen and (max-width: 768px) {
-      font-size: .9125em;
+      font-size: .875em;
     }
   }
 
   h3 {
     font-size: 1.125rem;
+    font-weight: 300;
   }
 
   a {

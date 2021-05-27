@@ -1,34 +1,22 @@
 import { formatLargeNum } from "../../utils/formatting";
+import { CotinentsArrayProps } from "./ContinentsList.models";
 
 import {
   Container,
+  Wrapper,
   Card,
   Title,
   Total,
   Fully,
   Daily,
+  Header,
 } from "./ContinentsList.styles";
-
-interface CotinentsArrayProps {
-  continents: {
-    country: string;
-    iso_code: string;
-    data: {
-      date: string;
-      daily_vaccinations: number;
-      total_vaccinations: number;
-      people_fully_vaccinated: number;
-      people_vaccinated_per_hundred: number;
-      total_vaccinations_per_hundred: number;
-    }[];
-  }[];
-}
 
 const ContinentsList = ({ continents }: CotinentsArrayProps) => {
   return (
-    <>
-      <h2>Continents</h2>{" "}
-      <Container>
+    <Container>
+      <Header>Continents</Header>{" "}
+      <Wrapper>
         {" "}
         {continents.map((obj) => {
           const last = obj.data[obj.data.length - 1];
@@ -54,8 +42,8 @@ const ContinentsList = ({ continents }: CotinentsArrayProps) => {
             </Card>
           );
         })}
-      </Container>
-    </>
+      </Wrapper>
+    </Container>
   );
 };
 
