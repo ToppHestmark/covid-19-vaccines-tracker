@@ -7,4 +7,5 @@ export const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: ${(props) => props.theme.colors.dark};
 `;

@@ -1,5 +1,13 @@
 import { WorldDataProps } from "./WorldList.models";
-import { Container } from "./WorldList.styles";
+import { formatLargeNum } from "../../utils/formatting";
+import {
+  Container,
+  Header,
+  Wrapper,
+  Card,
+  Quantity,
+  Description,
+} from "./WorldList.styles";
 
 const WorldList = ({ worldData }: WorldDataProps) => {
   const lastUpdate = worldData.map((obj) => obj.data[obj.data.length - 1]);
@@ -21,7 +29,31 @@ const WorldList = ({ worldData }: WorldDataProps) => {
   return (
     <Container>
       {" "}
-      <h1>Hello World</h1>
+      <Header>Worldwide</Header>
+      <Wrapper>
+        <Card>
+          <Quantity> {formatLargeNum(totalVaccinations)} </Quantity>
+          <Description> Vaccines administered around the world. </Description>
+        </Card>
+        <Card>
+          <Quantity> {formatLargeNum(peopleFullyVaccinated)} </Quantity>
+          <Description> People received at least one dose. </Description>
+        </Card>
+        <Card>
+          <Quantity className="percent"> {totalInPercent} % </Quantity>
+          <Description>
+            {" "}
+            Of the population received at least first dose of vaccice.{" "}
+          </Description>
+        </Card>
+        <Card>
+          <Quantity className="percent">
+            {" "}
+            {fullyVaccinatedPerHundred} %{" "}
+          </Quantity>
+          <Description> Of the population is fully vaccinated. </Description>
+        </Card>
+      </Wrapper>
     </Container>
   );
 };

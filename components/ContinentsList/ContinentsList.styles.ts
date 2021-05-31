@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const Header = styled.h3`
-  text-align: center;
-  padding: 0.5em 0 1.375em 0;
-`;
-
 export const Container = styled.section`
   width: 100%;
   background: ${(props) => props.theme.colors.light};
@@ -88,11 +83,13 @@ export const Total = styled.p`
 `;
 export const Fully = styled.p`
   font-size: 0.75rem;
-  opacity: 0.5;
+  font-weight: 300;
+  color: ${(props) => props.theme.colors.ghost};
 `;
 
 export const Daily = styled.p`
   font-size: 0.75rem;
-  opacity: 0.5;
+  font-weight: 300;
   text-align: end;
+  color: ${(props) => props.theme.colors.ghost};
 `;

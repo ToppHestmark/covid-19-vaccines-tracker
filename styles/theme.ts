@@ -10,12 +10,13 @@ const theme: DefaultTheme = {
 
   colors: {
     primary: "#f5b5fc",
+    primary_light: "#fff5fd",
     secondary: "#fcb1b1",
     neutral: "#f8f9fa",
     gray: "#e1e1e1",
-    gray_light: "#e7eded",
     light: "#fdfdfd",
     dark: "#2e323d",
+    ghost: "#9aa1b1",
     success: "#17b978",
   },
 };

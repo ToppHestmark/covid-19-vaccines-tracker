@@ -40,7 +40,7 @@ const CountriesList = ({ countries }: CountriesListArrayProps) => {
             return (
               <BodyRow key={obj.iso_code}>
                 <td>{obj.country} </td>
-                <td>{formatLargeNum(last.daily_vaccinations)}</td>
+                <td>{formatLargeNum(last?.daily_vaccinations)}</td>
                 <td> {formatLargeNum(last.total_vaccinations)} </td>
                 <td> {formatLargeNum(last?.people_fully_vaccinated)} </td>
                 <td className="percent-col">

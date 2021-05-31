@@ -1,4 +1,4 @@
-### Covid-19 Vaccines
+# Covid-19 Vaccines Tracker
 
 ### Task assignment
 

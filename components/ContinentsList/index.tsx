@@ -9,13 +9,11 @@ import {
   Total,
   Fully,
   Daily,
-  Header,
 } from "./ContinentsList.styles";
 
 const ContinentsList = ({ continents }: CotinentsArrayProps) => {
   return (
     <Container>
-      <Header>Continents</Header>{" "}
       <Wrapper>
         {" "}
         {continents.map((obj) => {
