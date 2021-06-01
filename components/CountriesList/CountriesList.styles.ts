@@ -6,14 +6,13 @@ export const Container = styled.table`
   padding: 0 1.625em 1.625em 1.625em;
   background-color: ${(props) => props.theme.colors.light};
   border-radius: ${(props) => props.theme.borderRadius};
+  border: 1px solid ${(props) => props.theme.colors.gray};
   margin-bottom: 4em;
 
   @media screen and (max-width: 768px) {
     min-width: fit-content;
     padding: 0 0.375em;
   }
-
-  ${(props) => props.theme.boxShadow};
 `;
 
 export const HeadWrapper = styled.thead`
@@ -76,6 +75,10 @@ export const PerHundredHead = styled.th`
   color: ${(props) => props.theme.colors.ghost};
   font-weight: 300;
   font-size: 0.75rem;
+
+  @media screen and (max-width: 480px) {
+    text-align: end;
+  }
 `;
 export const LastUpdatedHead = styled.th`
   width: 140px;
@@ -110,6 +113,10 @@ export const BodyRow = styled.tr`
 
     &.percent-col {
       text-align: center;
+
+      @media screen and (max-width: 480px) {
+        text-align: end;
+      }
     }
 
     &:last-child {
@@ -135,4 +142,10 @@ export const BodyRow = styled.tr`
       }
     }
   }
+`;
+
+export const MessageBox = styled.p`
+  text-align: center;
+  min-height: 5vh;
+  margin-bottom: 2em;
 `;

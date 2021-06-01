@@ -7,6 +7,7 @@ const theme: DefaultTheme = {
     -webkit-box-shadow: 0px 2px 17px 0px rgba(185, 177, 177, 0.57);
     -moz-box-shadow: 0px 2px 17px 0px rgba(185, 177, 177, 0.57);
   `,
+  transtition: "0.2s ease-in-out",
 
   colors: {
     primary: "#f5b5fc",

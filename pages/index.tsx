@@ -5,6 +5,7 @@ import { InferGetStaticPropsType } from "next";
 import { continentsArray } from "../variables/continentsArray";
 
 import {
+  Navbar,
   Layout,
   ProgressBar,
   ContinentsList,
@@ -46,15 +47,15 @@ export default function Home({
   return (
     <>
       <Head>
-        <title>Covid-19 Vaccines Tracker</title>
+        <title>Covid Vaccines Tracker</title>
         <meta
           name="description"
-          content="Covid-19 viccines tracking per country."
+          content="Covid-19 vaccines tracking per country."
         />
         <meta name="author" content="Topp Hestmark." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Navbar />
       <Layout>
         {loading ? (
           <ProgressBar />

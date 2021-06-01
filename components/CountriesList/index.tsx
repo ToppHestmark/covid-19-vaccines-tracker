@@ -13,6 +13,7 @@ import {
   LastUpdatedHead,
   BodyWrapper,
   BodyRow,
+  MessageBox,
 } from "./CountriesList.styles";
 
 const CountriesList = ({ countries }: CountriesListArrayProps) => {
@@ -55,6 +56,9 @@ const CountriesList = ({ countries }: CountriesListArrayProps) => {
           })}
         </BodyWrapper>
       </Container>
+      {countriesData.length === 0 && (
+        <MessageBox>Sorry, no matching search result.</MessageBox>
+      )}
     </>
   );
 };

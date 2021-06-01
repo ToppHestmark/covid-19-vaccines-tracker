@@ -4,9 +4,10 @@ export const Container = styled.section`
   width: 100%;
   background: ${(props) => props.theme.colors.light};
   border-radius: ${(props) => props.theme.borderRadius};
-
-  ${(props) => props.theme.boxShadow};
+  margin-bottom: 1em;
+  border: 1px solid ${(props) => props.theme.colors.gray};
 `;
+
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, auto);

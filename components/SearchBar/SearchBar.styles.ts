@@ -4,6 +4,7 @@ export const SearchWrapper = styled.div`
   width: 100%;
   margin: 1em 0;
   display: flex;
+  justify-content: center;
 
   @media screen and (max-width: 768px) {
     padding: 0.3em 1.2em;
@@ -17,7 +18,7 @@ export const Input = styled.input`
   outline: 0;
   font-size: large;
   border-radius: ${(props) => props.theme.borderRadius};
-  background: transparent;
+  border: 1px solid ${(props) => props.theme.colors.gray};
 
   &:focus {
     ${(props) => props.theme.boxShadow};

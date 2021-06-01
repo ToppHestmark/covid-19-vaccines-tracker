@@ -1,13 +1,16 @@
-import { Main } from "./Layout.styles";
+import { Container, Wrapper } from "./Layout.styles";
+import Header from "./Header";
 import Footer from "./Footer";
 
 const Layout = ({ children }: any) => {
   return (
-    <Main>
-      {" "}
-      {children}
-      <Footer />
-    </Main>
+    <Container>
+      <Wrapper>
+        <Header />
+        {children}
+        <Footer />
+      </Wrapper>
+    </Container>
   );
 };
 

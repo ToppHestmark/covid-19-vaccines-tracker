@@ -8,4 +8,10 @@ export const FooterContainer = styled.footer`
   justify-content: center;
   align-items: center;
   color: ${(props) => props.theme.colors.dark};
+  transition: ${(props) => props.theme.transtition};
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
 `;

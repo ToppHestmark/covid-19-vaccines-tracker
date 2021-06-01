@@ -4,6 +4,7 @@ declare module "styled-components" {
   export interface DefaultTheme {
     borderRadius: string;
     boxShadow: string;
+    transtition: string;
 
     colors: {
       primary: string;

@@ -6,8 +6,7 @@ export const Container = styled.div`
   padding: 1.25em 0em;
   background-color: ${(props) => props.theme.colors.light};
   border-radius: ${(props) => props.theme.borderRadius};
-
-  ${(props) => props.theme.boxShadow}
+  border: 1px solid ${(props) => props.theme.colors.gray};
 `;
 
 export const Header = styled.h3`
