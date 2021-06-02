@@ -5,7 +5,6 @@ import { InferGetStaticPropsType } from "next";
 import { continentsArray } from "../variables/continentsArray";
 
 import {
-  Navbar,
   Layout,
   ProgressBar,
   ContinentsList,
@@ -55,7 +54,6 @@ export default function Home({
         <meta name="author" content="Topp Hestmark." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
       <Layout>
         {loading ? (
           <ProgressBar />

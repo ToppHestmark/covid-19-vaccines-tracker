@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 
@@ -16,11 +17,18 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.colors.neutral};
     color: ${(props) => props.theme.colors.dark};
 
+    @media screen and (min-width: 480px) {
+      overflow-x: hidden;
+    }
+  }
+
+  body {
+    max-width: 1920px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     @media screen and (max-width: 768px) {
       font-size: .875em;
     }

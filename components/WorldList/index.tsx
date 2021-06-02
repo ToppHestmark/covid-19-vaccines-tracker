@@ -29,7 +29,7 @@ const WorldList = ({ worldData }: WorldDataProps) => {
   return (
     <Container>
       {" "}
-      <Header>Worldwide</Header>
+      <Header>Worldwide Data</Header>
       <Wrapper>
         <Card>
           <Quantity> {formatLargeNum(totalVaccinations)} </Quantity>

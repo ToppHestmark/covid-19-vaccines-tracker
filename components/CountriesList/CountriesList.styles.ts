@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme";
 
 export const Container = styled.table`
+  width: 100% auto;
   min-width: 81.7px;
   padding: 0 1.625em 1.625em 1.625em;
   background-color: ${(props) => props.theme.colors.light};
@@ -15,25 +16,22 @@ export const Container = styled.table`
   }
 `;
 
-export const HeadWrapper = styled.thead`
-  height: 40px;
-  position: sticky;
-  top: 0;
-  background-color: ${(props) => props.theme.colors.light};
+export const HeadWrapper = styled.thead``;
 
-  @media screen and (max-width: 768px) {
-    height: 50px;
-  }
-`;
 export const HeadRow = styled.tr`
   z-index: 2;
 `;
+
 export const CountryHead = styled.th`
   width: 220px;
+  height: 40px;
+  position: sticky;
+  top: 0;
   text-align: left;
   padding-left: 0.6em;
   border-bottom: 1px solid ${theme.colors.gray};
   color: ${(props) => props.theme.colors.ghost};
+  background-color: ${(props) => props.theme.colors.light};
   font-weight: 300;
   font-size: 0.75rem;
 
@@ -43,9 +41,13 @@ export const CountryHead = styled.th`
 `;
 export const DailyHead = styled.th`
   width: 130px;
+  height: 40px;
+  position: sticky;
+  top: 0;
   text-align: right;
   border-bottom: 1px solid ${theme.colors.gray};
   color: ${(props) => props.theme.colors.ghost};
+  background-color: ${(props) => props.theme.colors.light};
   font-weight: 300;
   font-size: 0.75rem;
 
@@ -55,24 +57,36 @@ export const DailyHead = styled.th`
 `;
 export const TotalHead = styled.th`
   width: 180px;
+  height: 40px;
+  position: sticky;
+  top: 0;
   text-align: right;
   border-bottom: 1px solid ${theme.colors.gray};
   color: ${(props) => props.theme.colors.ghost};
+  background-color: ${(props) => props.theme.colors.light};
   font-weight: 300;
   font-size: 0.75rem;
 `;
 export const FullyVaccHead = styled.th`
   width: 180px;
+  height: 40px;
+  position: sticky;
+  top: 0;
   text-align: right;
   border-bottom: 1px solid ${theme.colors.gray};
   color: ${(props) => props.theme.colors.ghost};
+  background-color: ${(props) => props.theme.colors.light};
   font-weight: 300;
   font-size: 0.75rem;
 `;
 export const PerHundredHead = styled.th`
   width: 140px;
+  height: 40px;
+  position: sticky;
+  top: 0;
   border-bottom: 1px solid ${theme.colors.gray};
   color: ${(props) => props.theme.colors.ghost};
+  background-color: ${(props) => props.theme.colors.light};
   font-weight: 300;
   font-size: 0.75rem;
 
@@ -82,10 +96,14 @@ export const PerHundredHead = styled.th`
 `;
 export const LastUpdatedHead = styled.th`
   width: 140px;
+  height: 40px;
+  position: sticky;
+  top: 0;
   text-align: right;
   padding-right: 0.6em;
   border-bottom: 1px solid ${theme.colors.gray};
   color: ${(props) => props.theme.colors.ghost};
+  background-color: ${(props) => props.theme.colors.light};
   font-weight: 300;
   font-size: 0.75rem;
 
