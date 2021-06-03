@@ -5,6 +5,6 @@
 - [x] Setting up typescript styled-components.
 - [x] Create a layout.
 - [ ] Link footer with github account.
-- [ ] Grapgh data.
+- [ ] Grapgh data / Chart.js
 - [ ] Maps?
 - [ ] Cleaned up codes.
