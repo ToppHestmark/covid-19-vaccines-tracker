@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CountriesListArrayProps } from "./countriesList.models";
 import { nonCountryArray } from "../../variables/nonCountryArray";
 import { formatDate, formatLargeNum } from "../../utils/formatting";
@@ -40,7 +41,12 @@ const CountriesList = ({ countries }: CountriesListArrayProps) => {
 
             return (
               <BodyRow key={obj.iso_code}>
-                <td>{obj.country} </td>
+                <Link href="/chart/[iso]" as={`/chart/${obj.iso_code}`}>
+                  <td>
+                    <a>{obj.country}</a>
+                  </td>
+                </Link>
+
                 <td>{formatLargeNum(last?.daily_vaccinations)}</td>
                 <td> {formatLargeNum(last.total_vaccinations)} </td>
                 <td> {formatLargeNum(last?.people_fully_vaccinated)} </td>

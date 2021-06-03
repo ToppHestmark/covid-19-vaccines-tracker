@@ -10,6 +10,10 @@ export const FooterContainer = styled.footer`
   color: ${(props) => props.theme.colors.dark};
   transition: ${(props) => props.theme.transtition};
   opacity: 0.6;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   &:hover {
     opacity: 1;

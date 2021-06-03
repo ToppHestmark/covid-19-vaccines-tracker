@@ -8,3 +8,4 @@
 - [ ] Grapgh data / Chart.js
 - [ ] Maps?
 - [ ] Cleaned up codes.
+- [ ] Fix the loading for the home-page.
