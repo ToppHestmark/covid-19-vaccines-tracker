@@ -7,5 +7,12 @@ export const formatDate = (dateInput: string) => {
   return `${month} ${day}, ${year}`;
 };
 
+export const formatMonth = (dateInput: string) => {
+  const date = new Date(dateInput);
+  const month = new Intl.DateTimeFormat("en", { month: "long" }).format(date);
+
+  return month;
+};
+
 export const formatLargeNum = (num: number) =>
   num === undefined ? "-" : new Intl.NumberFormat().format(num);

@@ -3,7 +3,7 @@ import { FooterContainer } from "./Footer.styles";
 const Footer = () => (
   <FooterContainer>
     <a
-      href="https://ourworldindata.org/"
+      href="https://github.com/owid/covid-19-data"
       target="_blank"
       rel="noopener noreferrer"
     >

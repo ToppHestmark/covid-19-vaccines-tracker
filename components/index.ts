@@ -1,4 +1,5 @@
 export { default as Navbar } from "./Layout/Navbar";
+export { default as Header } from "./Header";
 export { default as Layout } from "./Layout";
 export { default as ProgressBar } from "./ProgressBar";
 export { default as WorldList } from "./WorldList";

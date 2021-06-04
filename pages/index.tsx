@@ -6,6 +6,7 @@ import { continentsArray } from "../variables/continentsArray";
 
 import {
   Layout,
+  Header,
   ProgressBar,
   ContinentsList,
   CountriesList,
@@ -55,6 +56,7 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
+        <Header> Covid Vaccines Tracker </Header>
         {loading ? (
           <ProgressBar />
         ) : (

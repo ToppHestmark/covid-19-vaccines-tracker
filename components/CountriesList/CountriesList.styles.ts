@@ -127,6 +127,7 @@ export const BodyRow = styled.tr`
     &:first-child {
       font-weight: 500;
       text-align: left;
+      cursor: pointer;
     }
 
     &.percent-col {
