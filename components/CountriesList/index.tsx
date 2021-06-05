@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CountriesListArrayProps } from "./countriesList.models";
+import CountriesListArrayProps from "./countriesList.models";
 import { nonCountryArray } from "../../variables/nonCountryArray";
 import { formatDate, formatLargeNum } from "../../utils/formatting";
 import {

@@ -1,4 +1,4 @@
-export interface CotinentsArrayProps {
+export default interface CotinentsArrayProps {
   continents: {
     country: string;
     iso_code: string;

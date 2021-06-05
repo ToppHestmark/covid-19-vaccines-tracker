@@ -1,4 +1,4 @@
-import { WorldDataProps } from "./WorldList.models";
+import WorldDataProps from "./WorldList.models";
 import { formatLargeNum } from "../../utils/formatting";
 import {
   Container,

@@ -1,4 +1,4 @@
-export interface selectedCountryProps {
+export default interface selectedCountryProps {
   selectedCountry: {
     country: string;
     iso_code: string;

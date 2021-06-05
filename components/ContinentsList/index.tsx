@@ -1,5 +1,5 @@
 import { formatLargeNum } from "../../utils/formatting";
-import { CotinentsArrayProps } from "./ContinentsList.models";
+import CotinentsArrayProps from "./ContinentsList.models";
 
 import {
   Container,

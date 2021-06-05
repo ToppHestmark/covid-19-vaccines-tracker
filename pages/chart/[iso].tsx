@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import { Layout, Chart, Header } from "../../components";
-import { Countries } from "./Chart.models";
+import Countries from "./Chart.models";
 
 const ChartPage = ({
   countriesArray,

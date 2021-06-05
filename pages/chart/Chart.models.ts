@@ -1,4 +1,4 @@
-export type Countries = {
+type Countries = {
   country: string;
   iso_code: string;
   data: {
@@ -10,3 +10,5 @@ export type Countries = {
     total_vaccinations_per_hundred: number;
   }[];
 };
+
+export default Countries;

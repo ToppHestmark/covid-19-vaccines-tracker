@@ -6,7 +6,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { selectedCountryProps } from "./Chart.models";
+import selectedCountryProps from "./Chart.models";
 import { formatMonth } from "../../utils/formatting";
 import { Header } from "../../components";
 

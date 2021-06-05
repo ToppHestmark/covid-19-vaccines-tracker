@@ -1,4 +1,4 @@
-export type CountriesListArrayProps = {
+export default interface CountriesListArrayProps {
   countries: {
     country: string;
     iso_code: string;
@@ -11,4 +11,4 @@ export type CountriesListArrayProps = {
       total_vaccinations_per_hundred: number;
     }[];
   }[];
-};
+}

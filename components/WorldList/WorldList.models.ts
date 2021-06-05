@@ -1,4 +1,4 @@
-export interface WorldDataProps {
+export default interface WorldDataProps {
   worldData: {
     country: string;
     iso_code: string;
