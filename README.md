@@ -14,6 +14,7 @@ Data source: [Our World in Data](https://github.com/owid/covid-19-data)
 - [x] Setting up typescript styled-components.
 - [x] Create a layout.
 - [x] Grapgh data / Chart.js
+- [ ] Chart page meta data for SEO.
 - [ ] Link footer with github account.
 - [ ] Maps?
 - [ ] Fix the loading for the home-page.
