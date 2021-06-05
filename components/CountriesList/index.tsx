@@ -1,5 +1,4 @@
 import Link from "next/link";
-import CountriesListArrayProps from "./countriesList.models";
 import { nonCountryArray } from "../../variables/nonCountryArray";
 import { formatDate, formatLargeNum } from "../../utils/formatting";
 import {
@@ -16,6 +15,21 @@ import {
   BodyRow,
   MessageBox,
 } from "./CountriesList.styles";
+
+interface CountriesListArrayProps {
+  countries: {
+    country: string;
+    iso_code: string;
+    data: {
+      date: string;
+      daily_vaccinations: number;
+      total_vaccinations: number;
+      people_fully_vaccinated: number;
+      people_vaccinated_per_hundred: number;
+      total_vaccinations_per_hundred: number;
+    }[];
+  }[];
+}
 
 const CountriesList = ({ countries }: CountriesListArrayProps) => {
   const countriesData = countries.filter(
