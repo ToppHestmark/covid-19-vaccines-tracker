@@ -1,5 +1,6 @@
 # Covid-19 Vaccines Tracker
 
+[Demo app](https://covid-vaccines-tracker.netlify.app/)
 Data source: [Our World in Data](https://github.com/owid/covid-19-data)
 
 ### Dependencies
