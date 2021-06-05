@@ -1,9 +1,9 @@
 import { InferGetStaticPropsType } from "next";
+import styled from "styled-components";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { formatDate } from "../../utils/formatting";
 import { Layout, Chart, Header } from "../../components";
-import { Description } from "./ChartPage.styles";
 
 type Countries = {
   country: string;
@@ -79,3 +79,12 @@ export async function getStaticPaths() {
 
   return { paths, fallback: "blocking" };
 }
+
+export const Description = styled.p`
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  font-weight: 200;
+  font-size: 0.875rem;
+  color: ${(props) => props.theme.colors.ghost};
+`;
