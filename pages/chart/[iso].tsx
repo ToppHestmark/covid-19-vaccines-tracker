@@ -1,6 +1,9 @@
 import { InferGetStaticPropsType } from "next";
+import Head from "next/head";
 import { useRouter } from "next/router";
+import { formatDate } from "../../utils/formatting";
 import { Layout, Chart, Header } from "../../components";
+import { Description } from "./ChartPage.styles";
 
 type Countries = {
   country: string;
@@ -25,11 +28,27 @@ const ChartPage = ({
     (obj: any) => obj.iso_code === countryIsoCode
   );
 
+  const contentDescription = (): string => {
+    const country = selectedCountry.country;
+    const perDate = selectedCountry.data[selectedCountry.data.length - 1].date;
+    const date = formatDate(perDate);
+
+    return `Latest data of ${country} per ${date}, not every country/territory get a daily update.`;
+  };
+
   return (
-    <Layout>
-      <Header> {selectedCountry.country.toUpperCase()} </Header>
-      <Chart selectedCountry={selectedCountry} />
-    </Layout>
+    <>
+      <Head>
+        <title>Covid Vaccines Tracker</title>
+        <meta name="description" content={contentDescription()} />
+        <meta name="author" content="Topp Hestmark." />
+      </Head>
+      <Layout>
+        <Header> {selectedCountry.country.toUpperCase()} </Header>
+        <Chart selectedCountry={selectedCountry} />
+        <Description>{contentDescription()}</Description>
+      </Layout>
+    </>
   );
 };
 
