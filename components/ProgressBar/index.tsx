@@ -1,9 +1,15 @@
 import { Container, Progress } from "./ProgressBar.styles";
 
-const ProgressBar = () => (
-  <Container>
-    <Progress></Progress>
-  </Container>
-);
+interface LoadingProps {
+  loading: boolean;
+}
+
+const ProgressBar = () => {
+  return (
+    <Container>
+      <Progress></Progress>
+    </Container>
+  );
+};
 
 export default ProgressBar;

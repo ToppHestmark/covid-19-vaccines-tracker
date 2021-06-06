@@ -13,7 +13,7 @@ const Navbar = () => {
                 className="image"
                 src="/logo.png"
                 alt="Logo"
-                width={420}
+                width={450}
                 height={200}
               />
             </a>

@@ -33,7 +33,7 @@ const ChartPage = ({
     const perDate = selectedCountry.data[selectedCountry.data.length - 1].date;
     const date = formatDate(perDate);
 
-    return `Latest data of ${country} per ${date}, not every country/territory get a daily update.`;
+    return `Latest data of ${country} per ${date}, source: ourworldindata.org.`;
   };
 
   return (

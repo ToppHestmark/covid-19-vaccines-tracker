@@ -15,6 +15,7 @@ Data source: [Our World in Data](https://github.com/owid/covid-19-data)
 - [x] Create a layout.
 - [x] Grapgh data / Chart.js
 - [x] Chart page meta data for SEO.
+- [ ] Fix the loading for main page.
 - [ ] Fix the loading for country onClick.
 - [ ] Link footer with github account.
 - [ ] Maps?
