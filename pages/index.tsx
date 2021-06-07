@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useEffect } from "react";
+import { useState, ChangeEvent } from "react";
 import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
 
@@ -7,7 +7,6 @@ import { continentsArray } from "../variables/continentsArray";
 import {
   Layout,
   Header,
-  ProgressBar,
   ContinentsList,
   CountriesList,
   SearchBar,
@@ -18,7 +17,6 @@ export default function Home({
   countriesArray,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(true);
 
   const countriesSearch = countriesArray.filter((con: any) =>
     con.country.toLowerCase().includes(search.toLowerCase())
@@ -38,12 +36,6 @@ export default function Home({
     (obj: any) => obj.country === "World"
   );
 
-  useEffect(() => {
-    setTimeout(() => {
-      countriesArray && setLoading(false);
-    }, 1000);
-  }, [countriesArray]);
-
   return (
     <>
       <Head>
@@ -57,20 +49,15 @@ export default function Home({
       </Head>
       <Layout>
         <Header> Covid Vaccines Tracker </Header>
-        {loading ? (
-          <ProgressBar />
-        ) : (
-          <>
-            <WorldList worldData={worldData} />
-            <ContinentsList continents={continentsData} />
-            <SearchBar
-              type="text"
-              placeholder="Search for countries"
-              onChange={handleSearch}
-            />
-            <CountriesList countries={countriesSearch} />
-          </>
-        )}
+
+        <WorldList worldData={worldData} />
+        <ContinentsList continents={continentsData} />
+        <SearchBar
+          type="text"
+          placeholder="Search for countries"
+          onChange={handleSearch}
+        />
+        <CountriesList countries={countriesSearch} />
       </Layout>
     </>
   );

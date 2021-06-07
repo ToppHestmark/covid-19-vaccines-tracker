@@ -19,5 +19,4 @@ Data source: [Our World in Data](https://github.com/owid/covid-19-data)
 - [ ] Fix the loading for country onClick.
 - [ ] Link footer with github account.
 - [ ] Maps?
-- [ ] Fix the loading for the home-page.
-- [ ] Cleaned up codes.
+- [ ] Cleaned/split up codes.
