@@ -9,7 +9,13 @@ import {
 import { formatMonth } from "../../utils/formatting";
 
 import { selectedCountryProps } from "./chart.models";
-import { Container } from "./Chart.styles";
+import {
+  Container,
+  LabelWrapper,
+  FullySquare,
+  TotalSquare,
+  Label,
+} from "./Chart.styles";
 
 const Chart = ({ selectedCountry }: selectedCountryProps) => {
   const dataArray = selectedCountry.data;
@@ -53,43 +59,49 @@ const Chart = ({ selectedCountry }: selectedCountryProps) => {
   ];
 
   return (
-    <Container>
-      <AreaChart
-        width={730}
-        height={250}
-        data={data}
-        margin={{ top: 10, right: 30, left: 50, bottom: 0 }}
-      >
-        <defs>
-          <linearGradient id="colortotal" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#f5b5fc" stopOpacity={0.8} />
-            <stop offset="95%" stopColor="#f5b5fc" stopOpacity={0} />
-          </linearGradient>
-          <linearGradient id="colorfully" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
-            <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
-          </linearGradient>
-        </defs>
-        <XAxis dataKey="name" style={{ paddingTop: "100px" }} />
-        <YAxis />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip />
-        <Area
-          type="monotone"
-          dataKey="total"
-          stroke="#f5b5fc"
-          fillOpacity={1}
-          fill="url(#colortotal)"
-        />
-        <Area
-          type="monotone"
-          dataKey="fully"
-          stroke="#82ca9d"
-          fillOpacity={1}
-          fill="url(#colorfully)"
-        />
-      </AreaChart>
-    </Container>
+    <>
+      <LabelWrapper>
+        <TotalSquare /> <Label>Total vaccinated</Label>
+        <FullySquare /> <Label>Fully vaccinated</Label>
+      </LabelWrapper>
+      <Container>
+        <AreaChart
+          width={730}
+          height={250}
+          data={data}
+          margin={{ top: 10, right: 30, left: 50, bottom: 0 }}
+        >
+          <defs>
+            <linearGradient id="colortotal" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#f5b5fc" stopOpacity={0.8} />
+              <stop offset="95%" stopColor="#f5b5fc" stopOpacity={0} />
+            </linearGradient>
+            <linearGradient id="colorfully" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
+              <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <XAxis dataKey="name" style={{ paddingTop: "100px" }} />
+          <YAxis />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Tooltip />
+          <Area
+            type="monotone"
+            dataKey="total"
+            stroke="#f5b5fc"
+            fillOpacity={1}
+            fill="url(#colortotal)"
+          />
+          <Area
+            type="monotone"
+            dataKey="fully"
+            stroke="#82ca9d"
+            fillOpacity={1}
+            fill="url(#colorfully)"
+          />
+        </AreaChart>
+      </Container>
+    </>
   );
 };
 
