@@ -1,22 +1,10 @@
 import { InferGetStaticPropsType } from "next";
-import styled from "styled-components";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { formatDate } from "../../utils/formatting";
 import { Layout, Chart, Header } from "../../components";
-
-type Countries = {
-  country: string;
-  iso_code: string;
-  data: {
-    date: string;
-    daily_vaccinations: number;
-    total_vaccinations: number;
-    people_fully_vaccinated: number;
-    people_vaccinated_per_hundred: number;
-    total_vaccinations_per_hundred: number;
-  }[];
-};
+import { Countries } from "./models";
+import { Description } from "./chart.styles";
 
 const ChartPage = ({
   countriesArray,
@@ -79,12 +67,3 @@ export async function getStaticPaths() {
 
   return { paths, fallback: "blocking" };
 }
-
-export const Description = styled.p`
-  width: 100%;
-  text-align: center;
-  padding: 1em;
-  font-weight: 200;
-  font-size: 0.875rem;
-  color: ${(props) => props.theme.colors.ghost};
-`;
