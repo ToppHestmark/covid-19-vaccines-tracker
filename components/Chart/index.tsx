@@ -8,22 +8,8 @@ import {
 } from "recharts";
 import { formatMonth } from "../../utils/formatting";
 
+import { selectedCountryProps } from "./chart.models";
 import { Container } from "./Chart.styles";
-
-interface selectedCountryProps {
-  selectedCountry: {
-    country: string;
-    iso_code: string;
-    data: {
-      date: string;
-      daily_vaccinations: number;
-      total_vaccinations: number;
-      people_fully_vaccinated: number;
-      people_vaccinated_per_hundred: number;
-      total_vaccinations_per_hundred: number;
-    }[];
-  };
-}
 
 const Chart = ({ selectedCountry }: selectedCountryProps) => {
   const dataArray = selectedCountry.data;
