@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const Container = styled.main`
   width: 100%;
   min-height: 100vh;
+  position: relative;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: hidden;
 `;
 
 export const Wrapper = styled.section`
