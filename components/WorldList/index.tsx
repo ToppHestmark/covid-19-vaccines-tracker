@@ -12,10 +12,10 @@ import {
 const WorldList = ({ worldData }: WorldDataProps) => {
   const lastUpdate = worldData.map((obj) => obj.data[obj.data.length - 1]);
 
-  // Total Vaccinations
-  const totalVaccinations = lastUpdate.map((obj) => obj.total_vaccinations)[0];
+  // Total Vaccinations administered
+  const totalVaccinations = lastUpdate.map((obj) => obj.people_vaccinated)[0];
   const totalInPercent = lastUpdate.map(
-    (obj) => obj.total_vaccinations_per_hundred
+    (obj) => obj.people_vaccinated_per_hundred
   )[0];
 
   // Fully Vaccinations
@@ -33,17 +33,17 @@ const WorldList = ({ worldData }: WorldDataProps) => {
       <Wrapper>
         <Card>
           <Quantity> {formatLargeNum(totalVaccinations)} </Quantity>
-          <Description> Vaccines administered around the world. </Description>
+          <Description> People received first dose. </Description>
         </Card>
         <Card>
           <Quantity> {formatLargeNum(peopleFullyVaccinated)} </Quantity>
-          <Description> People received at least one dose. </Description>
+          <Description> People received second dose. </Description>
         </Card>
         <Card>
           <Quantity className="percent"> {totalInPercent} % </Quantity>
           <Description>
             {" "}
-            Of the population received at least first dose of vaccice.{" "}
+            Of the population received at least first dose of vaccine.{" "}
           </Description>
         </Card>
         <Card>
@@ -51,7 +51,7 @@ const WorldList = ({ worldData }: WorldDataProps) => {
             {" "}
             {fullyVaccinatedPerHundred} %{" "}
           </Quantity>
-          <Description> Of the population is fully vaccinated. </Description>
+          <Description> Of the population are fully vaccinated. </Description>
         </Card>
       </Wrapper>
     </Container>

@@ -22,7 +22,6 @@ const CountriesList = ({ countries }: CountriesListArrayProps) => {
     (obj) => !nonCountryArray.includes(obj.country)
   );
 
-  // Test...
   return (
     <>
       <Container cellSpacing="0" cellPadding="0">
@@ -30,7 +29,7 @@ const CountriesList = ({ countries }: CountriesListArrayProps) => {
           <HeadRow>
             <CountryHead>Country / Territory</CountryHead>
             <DailyHead>Daily</DailyHead>
-            <TotalHead>Total</TotalHead>
+            <TotalHead>1. Dose</TotalHead>
             <FullyVaccHead>Fully vaccinated</FullyVaccHead>
             <PerHundredHead>%</PerHundredHead>
             <LastUpdatedHead>Last update</LastUpdatedHead>
@@ -49,7 +48,7 @@ const CountriesList = ({ countries }: CountriesListArrayProps) => {
                 </Link>
 
                 <td>{formatLargeNum(last?.daily_vaccinations)}</td>
-                <td> {formatLargeNum(last.total_vaccinations)} </td>
+                <td> {formatLargeNum(last.people_vaccinated)} </td>
                 <td> {formatLargeNum(last?.people_fully_vaccinated)} </td>
                 <td className="percent-col">
                   {" "}

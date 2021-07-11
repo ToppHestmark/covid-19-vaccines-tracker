@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { formatLargeNum } from "../../utils/formatting";
 import { CotinentsArrayProps } from "./continentslist.models";
 
@@ -21,17 +22,21 @@ const ContinentsList = ({ continents }: CotinentsArrayProps) => {
 
           return (
             <Card key={obj.iso_code}>
+              <Link href="/chart/[iso]" as={`/chart/${obj.iso_code}`}>
+                <a>
+                  <span>
+                    <Title> {obj.country}</Title>
+                  </span>
+                </a>
+              </Link>
               <span>
-                <Title> {obj.country} </Title>
-              </span>
-              <span>
-                <Total> {formatLargeNum(last.total_vaccinations)} </Total>
+                <Total> {formatLargeNum(last.people_vaccinated)} </Total>
               </span>
 
               <span>
                 <Fully>
                   {" "}
-                  {last.total_vaccinations_per_hundred}% fully vaccinated{" "}
+                  {last.people_vaccinated_per_hundred}% fully vaccinated{" "}
                 </Fully>
               </span>
               <span>

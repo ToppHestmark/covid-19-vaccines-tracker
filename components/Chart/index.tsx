@@ -28,32 +28,32 @@ const Chart = ({ selectedCountry }: selectedCountryProps) => {
   const data = [
     {
       name: formatMonth(dataArray[0].date),
-      total: dataArray[0]?.total_vaccinations,
+      total: dataArray[0]?.people_vaccinated,
       fully: dataArray[0]?.people_fully_vaccinated,
     },
     {
       name: formatMonth(dataArray[second].date),
-      total: dataArray[second]?.total_vaccinations,
+      total: dataArray[second]?.people_vaccinated,
       fully: dataArray[second]?.people_fully_vaccinated,
     },
     {
       name: formatMonth(dataArray[third].date),
-      total: dataArray[third]?.total_vaccinations,
+      total: dataArray[third]?.people_vaccinated,
       fully: dataArray[third]?.people_fully_vaccinated,
     },
     {
       name: formatMonth(dataArray[fourth].date),
-      total: dataArray[fourth]?.total_vaccinations,
+      total: dataArray[fourth]?.people_vaccinated,
       fully: dataArray[fourth]?.people_fully_vaccinated,
     },
     {
       name: formatMonth(dataArray[fifth].date),
-      total: dataArray[fifth]?.total_vaccinations,
+      total: dataArray[fifth]?.people_vaccinated,
       fully: dataArray[fifth]?.people_fully_vaccinated,
     },
     {
       name: formatMonth(dataArray[dataLength].date),
-      total: dataArray[dataLength]?.total_vaccinations,
+      total: dataArray[dataLength]?.people_vaccinated,
       fully: dataArray[dataLength]?.people_fully_vaccinated,
     },
   ];
@@ -61,7 +61,7 @@ const Chart = ({ selectedCountry }: selectedCountryProps) => {
   return (
     <>
       <LabelWrapper>
-        <TotalSquare /> <Label>Total vaccinated</Label>
+        <TotalSquare /> <Label>First dose</Label>
         <FullySquare /> <Label>Fully vaccinated</Label>
       </LabelWrapper>
       <Container>
