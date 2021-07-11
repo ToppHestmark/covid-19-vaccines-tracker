@@ -2,8 +2,11 @@
 
 [Demo app](https://covid-vaccines-tracker.netlify.app/)
 
-Source: [Our World in Data](https://github.com/owid/covid-19-data) github repository. <br />
-Visit [ourworldindata.org](https://ourworldindata.org/) for more info.
+Source: <br />
+
+- [Our World in Data](https://github.com/owid/covid-19-data) github repository. <br />
+- [Dataset](https://ourworldindata.org/covid-vaccination-dataset) / [Statistics and Research](https://ourworldindata.org/covid-vaccinations) from ourworldindata.org. <br />
+  Visit [ourworldindata.org](https://ourworldindata.org/) for more info.
 
 ## About
 
