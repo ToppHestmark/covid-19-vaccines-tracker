@@ -1,10 +1,11 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
 
 import { continentsArray } from "../variables/continentsArray";
 
 import {
+  ProgressBar,
   Layout,
   Header,
   ContinentsList,
@@ -67,7 +68,9 @@ export const getStaticProps = async () => {
   const res = await fetch(
     "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.json"
   );
-  const countriesArray = await res.json();
+  const json = await res.json();
+
+  const countriesArray = json;
 
   return {
     props: {
