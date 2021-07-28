@@ -1,11 +1,10 @@
-import { useState, ChangeEvent, useEffect } from "react";
+import { useState, ChangeEvent } from "react";
 import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
 
 import { continentsArray } from "../variables/continentsArray";
 
 import {
-  ProgressBar,
   Layout,
   Header,
   ContinentsList,
