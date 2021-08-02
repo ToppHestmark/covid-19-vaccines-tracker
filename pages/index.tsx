@@ -67,9 +67,7 @@ export const getStaticProps = async () => {
   const res = await fetch(
     "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.json"
   );
-  const json = await res.json();
-
-  const countriesArray = json;
+  const countriesArray = await res.json();
 
   return {
     props: {
