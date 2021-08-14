@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
 
@@ -7,6 +7,7 @@ import { continentsArray } from "../variables/continentsArray";
 import {
   Layout,
   Header,
+  ProgressBar,
   ContinentsList,
   CountriesList,
   SearchBar,
@@ -17,6 +18,7 @@ export default function Home({
   countriesArray,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState<boolean>(true as boolean);
 
   const countriesSearch = countriesArray.filter((con: any) =>
     con.country.toLowerCase().includes(search.toLowerCase())
@@ -36,6 +38,10 @@ export default function Home({
     (obj: any) => obj.country === "World"
   );
 
+  useEffect(() => {
+    setLoading(countriesArray ? false : true);
+  }, [countriesArray]);
+
   return (
     <>
       <Head>
@@ -48,16 +54,21 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Header> Covid Vaccines Tracker </Header>
-
-        <WorldList worldData={worldData} />
-        <ContinentsList continents={continentsData} />
-        <SearchBar
-          type="text"
-          placeholder="Search for countries"
-          onChange={handleSearch}
-        />
-        <CountriesList countries={countriesSearch} />
+        {loading ? (
+          <ProgressBar />
+        ) : (
+          <>
+            <Header> Covid Vaccines Tracker </Header>
+            <WorldList worldData={worldData} />
+            <ContinentsList continents={continentsData} />
+            <SearchBar
+              type="text"
+              placeholder="Search for countries"
+              onChange={handleSearch}
+            />
+            <CountriesList countries={countriesSearch} />
+          </>
+        )}
       </Layout>
     </>
   );
