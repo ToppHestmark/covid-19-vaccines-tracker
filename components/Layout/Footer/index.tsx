@@ -1,4 +1,4 @@
-import { FooterContainer } from "./Footer.styles";
+import { FooterContainer, FooterText } from "./Footer.styles";
 
 const Footer = () => (
   <FooterContainer>
@@ -16,6 +16,15 @@ const Footer = () => (
     >
       <span>Github: </span> <span>Topp Hestmark</span>
     </a>
+    <FooterText>
+      <span>
+        <strong>Note: </strong>
+      </span>
+      <span>
+        This project is deprecated and is currently facing a cache issue through
+        the hosting provider.
+      </span>
+    </FooterText>
   </FooterContainer>
 );
 

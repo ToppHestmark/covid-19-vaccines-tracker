@@ -2,16 +2,15 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
   margin-top: auto;
-  padding-bottom: 1em;
+  padding: 1em 0;
   width: 100%;
-  height: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: ${(props) => props.theme.colors.dark};
   transition: ${(props) => props.theme.transtition};
-  position: absolute;
+  position: sticky;
   bottom: 0;
   left: 0;
   right: 0;
@@ -24,4 +23,8 @@ export const FooterContainer = styled.footer`
   a:hover {
     opacity: 1;
   }
+`;
+
+export const FooterText = styled.div`
+  padding: 1em 0;
 `;
