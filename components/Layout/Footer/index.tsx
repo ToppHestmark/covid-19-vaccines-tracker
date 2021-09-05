@@ -21,8 +21,8 @@ const Footer = () => (
         <strong>Note: </strong>
       </span>
       <span>
-        This project is deprecated and is currently facing a cache issue through
-        the hosting provider.
+        This project contain chart bug issue and cache issue from hosting
+        provider.
       </span>
     </FooterText>
   </FooterContainer>
