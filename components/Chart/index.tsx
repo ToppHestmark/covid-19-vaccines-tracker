@@ -19,7 +19,7 @@ import {
 
 const Chart = ({ selectedCountry }: selectedCountryProps) => {
   const dataArray = selectedCountry.data;
-  const dataLength = dataArray.length - 1;
+  const dataLength = selectedCountry.data.length - 1;
   const second = Math.floor(dataLength * 0.2);
   const third = Math.floor(dataLength * 0.4);
   const fourth = Math.floor(dataLength * 0.6);
