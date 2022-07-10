@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { nonCountryArray } from "../../variables/nonCountryArray";
 import { formatDate, formatLargeNum } from "../../utils/formatting";
-import { CountriesListArrayProps } from "./countriesList.models";
+import { Countries } from "../../globaltypes";
 import {
   Container,
   HeadWrapper,
@@ -17,7 +17,11 @@ import {
   MessageBox,
 } from "./CountriesList.styles";
 
-const CountriesList = ({ countries }: CountriesListArrayProps) => {
+interface ICountriesList {
+  countries: Countries[];
+}
+
+const CountriesList = ({ countries }: ICountriesList) => {
   const countriesData = countries.filter(
     (obj) => !nonCountryArray.includes(obj.country)
   );

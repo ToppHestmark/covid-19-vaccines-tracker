@@ -7,6 +7,7 @@ import {
   YAxis,
 } from "recharts";
 import { formatMonth } from "../../utils/formatting";
+// import useMediaQuery from "../hooks/useMediaQuery";
 
 import { selectedCountryProps } from "./chart.models";
 import {
@@ -18,45 +19,39 @@ import {
 } from "./Chart.styles";
 
 const Chart = ({ selectedCountry }: selectedCountryProps) => {
+  // const smallScreen = useMediaQuery("(min-width: 320px)");
+  // const mediumSmallScreen = useMediaQuery("(min-width: 588px)");
+  // const mediumScreen = useMediaQuery("(min-width: 768px)");
+  // const largeScreen = useMediaQuery("(min-width: 992px)");
+  // const extraLargeScreen = useMediaQuery("(min-width: 1200px)");
+
   const dataArray = selectedCountry.data;
   const dataLength = selectedCountry.data.length - 1;
-  const second = Math.floor(dataLength * 0.2);
-  const third = Math.floor(dataLength * 0.4);
+  const first = Math.floor(dataLength * 0.1);
+  const second = Math.floor(dataLength * 0.3);
+  const third = Math.floor(dataLength * 0.5);
   const fourth = Math.floor(dataLength * 0.6);
-  const fifth = Math.floor(dataLength * 0.8);
+  const fifth = Math.floor(dataLength * 0.7);
+  const sixt = Math.floor(dataLength * 0.75);
+  const seventh = Math.floor(dataLength * 0.85);
+  const eight = Math.floor(dataLength * 0.9);
+  const nine = Math.floor(dataLength * 0.99);
 
-  const data = [
-    {
-      name: formatMonth(dataArray[0].date),
-      total: dataArray[0]?.people_vaccinated,
-      fully: dataArray[0]?.people_fully_vaccinated,
-    },
-    {
-      name: formatMonth(dataArray[second].date),
-      total: dataArray[second]?.people_vaccinated,
-      fully: dataArray[second]?.people_fully_vaccinated,
-    },
-    {
-      name: formatMonth(dataArray[third].date),
-      total: dataArray[third]?.people_vaccinated,
-      fully: dataArray[third]?.people_fully_vaccinated,
-    },
-    {
-      name: formatMonth(dataArray[fourth].date),
-      total: dataArray[fourth]?.people_vaccinated,
-      fully: dataArray[fourth]?.people_fully_vaccinated,
-    },
-    {
-      name: formatMonth(dataArray[fifth].date),
-      total: dataArray[fifth]?.people_vaccinated,
-      fully: dataArray[fifth]?.people_fully_vaccinated,
-    },
-    {
-      name: formatMonth(dataArray[dataLength].date),
-      total: dataArray[dataLength]?.people_vaccinated,
-      fully: dataArray[dataLength]?.people_fully_vaccinated,
-    },
-  ];
+  const viewResults = [
+    first,
+    second,
+    third,
+    fourth,
+    fifth,
+    sixt,
+    seventh,
+    eight,
+    nine,
+  ].map((dataXindex) => ({
+    name: formatMonth(dataArray[dataXindex].date),
+    total: dataArray[dataXindex]?.people_vaccinated,
+    fully: dataArray[dataXindex]?.people_fully_vaccinated,
+  }));
 
   return (
     <>
@@ -66,9 +61,9 @@ const Chart = ({ selectedCountry }: selectedCountryProps) => {
       </LabelWrapper>
       <Container>
         <AreaChart
-          width={730}
-          height={250}
-          data={data}
+          width={1200}
+          height={400}
+          data={viewResults}
           margin={{ top: 10, right: 30, left: 50, bottom: 0 }}
         >
           <defs>

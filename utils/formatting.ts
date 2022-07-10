@@ -9,9 +9,12 @@ export const formatDate = (dateInput: string) => {
 
 export const formatMonth = (dateInput: string) => {
   const date = new Date(dateInput);
-  const month = new Intl.DateTimeFormat("en", { month: "long" }).format(date);
+  const monthOutput = new Intl.DateTimeFormat("en", {
+    month: "short",
+    year: "2-digit",
+  }).format(date);
 
-  return month;
+  return monthOutput;
 };
 
 export const formatLargeNum = (num: number) =>

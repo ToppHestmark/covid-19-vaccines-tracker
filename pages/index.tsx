@@ -1,6 +1,5 @@
 import { useState, ChangeEvent, useEffect } from "react";
 import Head from "next/head";
-import { InferGetStaticPropsType } from "next";
 
 import { continentsArray } from "../variables/continentsArray";
 
@@ -13,14 +12,17 @@ import {
   SearchBar,
   WorldList,
 } from "../components";
+import { Countries } from "../globaltypes";
 
-export default function Home({
-  countriesArray,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+interface HomeProps {
+  countries: Countries[];
+}
+
+export default function Home({ countries }: HomeProps) {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState<boolean>(true as boolean);
 
-  const countriesSearch = countriesArray.filter((con: any) =>
+  const countriesSearch = countries.filter((con: any) =>
     con.country.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -30,17 +32,15 @@ export default function Home({
     setSearch(e.target.value.toLowerCase());
   };
 
-  const continentsData = countriesArray.filter((obj: any) =>
+  const continentsData = countries.filter((obj: any) =>
     continentsArray.includes(obj.country)
   );
 
-  const worldData = countriesArray.filter(
-    (obj: any) => obj.country === "World"
-  );
+  const worldData = countries.filter((obj: any) => obj.country === "World");
 
   useEffect(() => {
-    setLoading(countriesArray ? false : true);
-  }, [countriesArray]);
+    setLoading(countries ? false : true);
+  }, [countries]);
 
   return (
     <>
@@ -74,15 +74,19 @@ export default function Home({
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
+  let countries: Countries[] = [];
   const res = await fetch(
     "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.json"
   );
-  const countriesArray = await res.json();
+
+  if (res.ok) {
+    countries = await res.json();
+  }
 
   return {
     props: {
-      countriesArray,
+      countries,
     },
   };
 };

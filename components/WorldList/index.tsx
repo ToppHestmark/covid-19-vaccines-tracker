@@ -1,5 +1,5 @@
+import { Countries } from "../../globaltypes";
 import { formatLargeNum } from "../../utils/formatting";
-import { WorldDataProps } from "./worldList.models";
 import {
   Container,
   Header,
@@ -8,6 +8,10 @@ import {
   Quantity,
   Description,
 } from "./WorldList.styles";
+
+interface WorldDataProps {
+  worldData: Countries[];
+}
 
 const WorldList = ({ worldData }: WorldDataProps) => {
   const lastUpdate = worldData.map((obj) => obj.data[obj.data.length - 1]);
@@ -23,7 +27,7 @@ const WorldList = ({ worldData }: WorldDataProps) => {
     (obj) => obj.people_fully_vaccinated
   )[0];
   const fullyVaccinatedPerHundred = lastUpdate.map(
-    (obj) => obj.people_fully_vaccinated_per_hundred
+    (obj) => obj.people_vaccinated_per_hundred
   )[0];
 
   return (
